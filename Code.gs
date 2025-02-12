@@ -4,7 +4,7 @@ function sendReminders() {
   var allRows = sheet.getDataRange().getValues();
   var today =new Date();
 
-  // Loop through each row (skip the header row)
+  // Loop through each row skipping the header row
   for (var i = 1; i < allRows.length; i++) {  
     var personName =allRows[i][0];
     var recipientEmail = allRows[i][1];
@@ -26,7 +26,7 @@ function sendReminders() {
     var emailMessage;
 
     if (daysLeft === 0) {
-      emailSubject = "⚠️ Important: Your task is due TODAY!";
+      emailSubject = "Important: Your task is due TODAY!";
       emailMessage= `
         <p>Hey ${personName},</p>
         <p>This is an automated reminder that your deadline is <strong>today</strong>. If you haven’t completed your task yet, please do so as soon as possible.</p>
